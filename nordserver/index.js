@@ -1,12 +1,5 @@
 
-const net = require('net');
-const port = 7070;
-const host = '172.21.160.1';
 
-const server = net.createServer();
-server.listen(port, host, () => {
-    console.log('TCP Server is running on port ' + port + '.');
-});
 
 const io = require(host)(8000);
 const users={};
