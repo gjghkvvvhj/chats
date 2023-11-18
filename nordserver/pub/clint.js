@@ -6,10 +6,10 @@ const form =document.getElementById('send-cont');
 const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
 const names = prompt("enter your name");
-do{
-const names = prompt("enter your name");
-
-}while(!name==null){
+if(name==null){
+    name="i am froud";
+}else{
+}
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const newmessage=messageInput.value;
@@ -51,6 +51,4 @@ socket.on('receive',data=>{
     Appends(data.message,'received',data.name);
 
 })
-}else{
-    const names = prompt("enter your name");
-}
+
