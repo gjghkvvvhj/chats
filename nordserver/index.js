@@ -1,12 +1,13 @@
+const  express = require('express')
+const app = express()
+const port = 8000
+const http =require('http').createServer(app)
+app.use(express.static(__dirname+'/public'))
 
+app.get('/', (req, res) => res.sendFile(__dirname+'/index.html'))
+http.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
-
-const httpServer = require("http").createServer();
-const io = require("socket.io")(httpServer, {
-  // ...
-});
-httpServer.listen(8000);
-
+const io = require('socket.io')(http);
 const users={};
 io.on('connection',socket=>{
     console.log("gggg");
