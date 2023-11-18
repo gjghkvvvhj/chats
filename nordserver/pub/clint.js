@@ -5,9 +5,10 @@ const socket = io();
 const form =document.getElementById('send-cont');
 const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
+do{
 const names = prompt("enter your name");
 
-if(!name){
+}while(!name){
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const newmessage=messageInput.value;
