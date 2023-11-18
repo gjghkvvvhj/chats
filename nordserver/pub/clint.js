@@ -5,11 +5,15 @@ const socket = io();
 const form =document.getElementById('send-cont');
 const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
-const names = prompt("enter your name");
-if(names=null){
-    name="i am froud";
-}else{
-}
+
+do{
+    const names = prompt("enter your name");
+
+
+}while(!names){
+    
+ 
+
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const newmessage=messageInput.value;
@@ -22,13 +26,10 @@ form.addEventListener('submit',(e)=>{
 });
 
 const Appends=(message ,possition,name)=>{
-    if(name=""){
-        name="i am froud";
+    if(name == "admin88"){
+        name="";
     }
-    if(name="kkkkkh"){
-name="";
-
-    }
+    
     var txt3 = document.createElement('div');
 txt3.setAttribute("class","message "+possition)
     var h6e = document.createElement('h6');
@@ -60,3 +61,4 @@ socket.on('receive',data=>{
 
 })
 
+}
