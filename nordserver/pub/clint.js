@@ -22,7 +22,7 @@ form.addEventListener('submit',(e)=>{
 });
 
 const Appends=(message ,possition,name)=>{
-    if(name==""){
+    if(name=""){
         name="i am froud";
     }
     var txt3 = document.createElement('div');
