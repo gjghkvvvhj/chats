@@ -6,7 +6,7 @@ const form =document.getElementById('send-cont');
 const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
 const names = prompt("enter your name");
-if(name==null){
+if(name=null){
     name="i am froud";
 }else{
 }
@@ -22,6 +22,9 @@ form.addEventListener('submit',(e)=>{
 });
 
 const Appends=(message ,possition,name)=>{
+    if(name==""){
+        name="i am froud";
+    }
     var txt3 = document.createElement('div');
 txt3.setAttribute("class","message "+possition)
     var h6e = document.createElement('h6');
@@ -31,6 +34,7 @@ txt3.setAttribute("class","message "+possition)
     txt3.append(h6e);
     txt3.append(ptag);
     messagecontainer.append(txt3);
+        
     
     
 }
