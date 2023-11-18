@@ -51,7 +51,7 @@ txt3.setAttribute("class","message "+possition)
     
 }
 
-Appends("You joined chat",'send',"you");
+Appends("You joined chat",'center',"you");
 
 
 socket.emit('new-user-joined', names);
