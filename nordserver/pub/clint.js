@@ -5,7 +5,7 @@ const socket = io();
 const form =document.getElementById('send-cont');
 const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
-
+ const names = prompt("enter your name");
 do{
     const names = prompt("enter your name");
 
