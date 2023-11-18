@@ -1,7 +1,12 @@
 
 
 
-const io = require('socket.io')(8000);
+const httpServer = require("http").createServer();
+const io = require("socket.io")(httpServer, {
+  // ...
+});
+httpServer.listen(8000);
+
 const users={};
 io.on('connection',socket=>{
     console.log("gggg");
