@@ -5,13 +5,13 @@ const socket = io();
 const form =document.getElementById('send-cont');
 const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
- const names = prompt("enter your name");
-do{
+
+
     const names = prompt("enter your name");
-
-
-}while(!names){
     
+
+
+ 
  
 
 form.addEventListener('submit',(e)=>{
@@ -26,9 +26,16 @@ form.addEventListener('submit',(e)=>{
 });
 
 const Appends=(message ,possition,name)=>{
+    if(name == ""){
+        name="i am froud";
+    }
+    if(name == null){
+        name="i am froud";
+    } 
     if(name == "admin88"){
         name="";
     }
+   
     
     var txt3 = document.createElement('div');
 txt3.setAttribute("class","message "+possition)
@@ -61,4 +68,4 @@ socket.on('receive',data=>{
 
 })
 
-}
+
