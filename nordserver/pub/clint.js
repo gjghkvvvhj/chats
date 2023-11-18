@@ -7,7 +7,7 @@ const messageInput =document.getElementById('messageimput');
 const  messagecontainer =document.getElementById("ggd");
 const names = prompt("enter your name");
 
-if(names==null || names==""){
+if(!name){
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const newmessage=messageInput.value;
