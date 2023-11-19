@@ -85,7 +85,7 @@ socket.on('receive',data=>{
 
 })
 socket.on('deletreceive',datas=>{
-    const ff
+    
     const element = document.getElementById(datas.ids);
 element.remove();
    
