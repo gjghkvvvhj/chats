@@ -50,7 +50,10 @@ body {
   .received {
     background-color: #ebebeb;
   }
-  
+  form{
+  margin-top: auto;
+
+  }
   .chat-input {
     display: flex;
     padding: 10px;
