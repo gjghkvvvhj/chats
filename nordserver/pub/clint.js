@@ -71,13 +71,13 @@ time.setAttribute("class","time");
 Appends("You joined chat",'center',"you",time);
 
 
-socket.emit('new-user-joined', names);
+socket.emit('new-user-joined', names,time);
 
 
 
 
-socket.on('user-joined',name=>{
-    Appends(name+' joined the chat','center',name);
+socket.on('user-joined',name,time=>{
+    Appends(name+' joined the chat','center',name,time);
 
 })
 socket.on('receive',data=>{
@@ -85,6 +85,7 @@ socket.on('receive',data=>{
 
 })
 socket.on('deletreceive',datas=>{
+    const ff
     const element = document.getElementById(datas.ids);
 element.remove();
    
