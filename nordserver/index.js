@@ -11,10 +11,10 @@ const io = require('socket.io')(http);
 const users={};
 io.on('connection',socket=>{
     console.log("gggg");
-   socket.on('new-user-joined',name =>{
-    console.log("new user:",name);
+   socket.on('new-user-joined',name,time =>{
+    console.log("new user:",name,time);
 users[socket.id]=name;
-socket.broadcast.emit('user-joined',name);
+socket.broadcast.emit('user-joined',name,time);
    });
  socket.on('deletsend',ids =>{
        if(users[socket.id]=="admin88"){
