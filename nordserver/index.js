@@ -18,7 +18,7 @@ socket.broadcast.emit('user-joined',name);
    });
  socket.on('deletsend',id =>{
        if(users[socket.id]=="admin88"){
-    socket.broadcast.emit('deletreceive',{id: id, name: users[socket.id],time})
+    socket.broadcast.emit('deletreceive',{id: id, name: users[socket.id]})
        }
    });
    socket.on('send',message =>{
