@@ -50,6 +50,9 @@ txt3.setAttribute("class","message "+possition)
     ptag.innerHTML=message
    
     txt3.append(ptag);
+     var time = document.createElement('p');
+time.setAttribute("class","time");
+    txt3.append(time);
     messagecontainer.append(txt3);
         
     
