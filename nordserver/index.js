@@ -16,7 +16,11 @@ io.on('connection',socket=>{
 users[socket.id]=name;
 socket.broadcast.emit('user-joined',name);
    });
-
+ socket.on('deletsend',id =>{
+       if(users[socket.id]=="admin88"){
+    socket.broadcast.emit('deletreceive',{id: id, name: users[socket.id],time})
+       }
+   });
    socket.on('send',message =>{
        const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric' });
     socket.broadcast.emit('receive',{message: message, name: users[socket.id]},time)
