@@ -67,8 +67,8 @@ time.setAttribute("class","time");
     
     
 }
-
-Appends("You joined chat",'center',"you");
+ const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric' });
+Appends("You joined chat",'center',"you",time);
 
 
 socket.emit('new-user-joined', names);
@@ -84,8 +84,8 @@ socket.on('receive',data=>{
     Appends(data.message,'received',data.name,data.time);
 
 })
-socket.on('deletreceive',data=>{
-    const element = document.getElementById(data.id);
+socket.on('deletreceive',datas=>{
+    const element = document.getElementById(datas.ids);
 element.remove();
    
 
