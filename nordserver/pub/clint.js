@@ -25,9 +25,9 @@ form.addEventListener('submit',(e)=>{
 
 
 });
-function deletcall(id){
+const  deletcall(ids){
   
-    socket.emit('deletsend',id);
+    socket.emit('deletsend',ids);
 
 
 }
