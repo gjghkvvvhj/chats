@@ -77,5 +77,10 @@ socket.on('receive',data=>{
     Appends(data.message,'received',data.name,data.stime);
 
 })
+socket.on('deletreceive',data=>{
+    const element = document.getElementById(data.id);
+element.remove();
+   
 
+})
 
