@@ -40,7 +40,9 @@ const Appends=(message ,possition,name)=>{
     var txt3 = document.createElement('div');
 txt3.setAttribute("class","message "+possition)
     if(possition=="center"){
-    var h6e = document.createElement('h6');
+  
+    }else{
+          var h6e = document.createElement('h6');
     h6e.innerHTML=name;
          txt3.append(h6e);
     }
