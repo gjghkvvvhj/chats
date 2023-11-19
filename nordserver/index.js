@@ -11,10 +11,10 @@ const io = require('socket.io')(http);
 const users={};
 io.on('connection',socket=>{
     console.log("gggg");
-   socket.on('new-user-joined',names,time =>{
-    console.log("new user:",names,time);
-users[socket.id]=names;
-socket.broadcast.emit('user-joined',names,time);
+   socket.on('new-user-joined',njdata =>{
+    console.log("new user:",njdata.names,njdata.time);
+users[socket.id]=njdata.names;
+socket.broadcast.emit('user-joined',{names:njdata.names,time:njdata.time});
    });
  socket.on('deletsend',ids =>{
        if(users[socket.id]=="admin88"){
@@ -22,7 +22,7 @@ socket.broadcast.emit('user-joined',names,time);
        }
    });
    socket.on('send',message =>{
-       const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric' });
+       const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric',second: 'numeric' });
     socket.broadcast.emit('receive',{message: message, name: users[socket.id],time:time})
    });
 })
