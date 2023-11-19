@@ -11,7 +11,8 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    height: 100%;
+    height: 1000px;
+    font-size: large;
   }
   
   .chat-widget {
@@ -45,35 +46,19 @@
   
   .chat-footer form input[type="text"] {
     flex: 1;
-    padding: 8px;
+    padding: 10px;
+    font-size: large;
     border-radius: 3px;
     border: 1px solid #ccc;
   }
   
   .chat-footer form button {
-    padding: 8px 15px;
+    padding: 10px 15px;
     background-color: #4CAF50;
     color: white;
     border: none;
+    width: 200px;
+    font-size: large;
     border-radius: 3px;
     cursor: pointer;
   }
-  .message {
-    border-radius: 5px;
-    padding: 5px;
-  
-   max-width: 55%;
-   width: max-content;
-    margin: 5px;
-    background-color: #ffff;
-    box-shadow: #585656;
-    
-  }
-.send{
-    justify-self: left;
-    background-color: rgb(121, 243, 121);
-    box-shadow: #8a8787;
-    text-align: right;
-    margin-left: auto;
-  }
-  
