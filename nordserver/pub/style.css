@@ -1,67 +1,83 @@
-/* Resetting default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-  }
-  html{
+html{
     height: 100%;
-  }
-  body {
+}
+
+body {
+    height: 100%;
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    height: 1000px;
-    font-size: large;
+    background-color: #f2f2f2;
   }
   
-  .chat-widget {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  .chat-container {
     height: 100%;
-    margin: 20px auto;
-    overflow: hidden;
+  
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .chat-header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #075e54;
+    color: #fff;
     padding: 10px;
-    text-align: center;
+   
   }
   
-  .chat-body {
-    height:82%;;
+  .chat-header h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .chat-messages {
+  
+   
+   margin-bottom: auto;
     overflow-y: scroll;
-    padding: 10px;
   }
   
-  .chat-footer form {
+  .message {
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    max-width: 70%;
+  }
+  
+  .sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+  }
+  
+  .received {
+    background-color: #ebebeb;
+  }
+  
+  .chat-input {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
   }
   
-  .chat-footer form input[type="text"] {
+  input[type="text"] {
     flex: 1;
-    padding: 10px;
-    font-size: large;
-    border-radius: 3px;
+    padding: 8px;
+    border-radius: 5px;
     border: 1px solid #ccc;
+    margin-right: 10px;
   }
   
-  .chat-footer form button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
+  button {
+    padding: 8px 15px;
+    background-color: #128c7e;
+    color: #fff;
     border: none;
-    width: 200px;
-    font-size: large;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
   }
+  
+  button:hover {
+    background-color: #075e54;
+  }
+  
   .message {
     border-radius: 5px;
     padding: 5px;
