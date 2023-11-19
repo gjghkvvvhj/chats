@@ -30,7 +30,7 @@ body {
   }
   
   .chat-messages {
-   height:82%;;
+   height:85%;;
     overflow-y: scroll;
     padding: 10px;
   }
@@ -42,14 +42,9 @@ body {
     max-width: 70%;
   }
   
-  .sent {
-    background-color: #dcf8c6;
-    align-self: flex-end;
-  }
   
-  .received {
-    background-color: #ebebeb;
-  }
+  
+  
   form{
   margin-top: auto;
 
@@ -82,19 +77,19 @@ body {
   
   .message {
     border-radius: 5px;
-    padding: 5px;
+    padding: 2px;
   
    max-width: 55%;
    width: max-content;
-    margin: 5px;
+    margin: 1px;
     background-color: #ffff;
     box-shadow: #585656;
     
   }
 .center{
  justify-self: center;
-    background-color: rgb(121, 243, 121);
-    box-shadow: #8a8787;
+
+  
     margin-right: auto;
     text-align: center;
     margin-left: auto;
@@ -104,7 +99,7 @@ body {
     justify-self: left;
     background-color: rgb(121, 243, 121);
     box-shadow: #8a8787;
-    text-align: right;
+    text-align: left;
     margin-left: auto;
     
   }
