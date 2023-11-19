@@ -20,7 +20,7 @@ form.addEventListener('submit',(e)=>{
     const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric' });
     Appends(newmessage,'send',names,time);
 
-    socket.emit('send',newmessage,time);
+    socket.emit('send',newmessage);
     messageInput.value="";
 
 
@@ -81,7 +81,7 @@ socket.on('user-joined',name=>{
 
 })
 socket.on('receive',data=>{
-    Appends(data.message,'received',data.name,data.stime);
+    Appends(data.message,'received',data.name,data.time);
 
 })
 socket.on('deletreceive',data=>{
