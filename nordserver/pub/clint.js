@@ -25,12 +25,7 @@ form.addEventListener('submit',(e)=>{
 
 
 });
-const  deletcall=(ids)=>{
-  
-    socket.emit('deletsend',ids);
 
-
-}
 const Appends=(message ,possition,name,stime)=>{
     if(name == ""){
         name="i am froud";
