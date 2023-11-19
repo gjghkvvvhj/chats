@@ -17,15 +17,16 @@ const  messagecontainer =document.getElementById("ggd");
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const newmessage=messageInput.value;
-    Appends(newmessage,'send',names);
+    const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric' });
+    Appends(newmessage,'send',names,time);
 
-    socket.emit('send',newmessage);
+    socket.emit('send',newmessage,time);
     messageInput.value="";
 
 
 });
 
-const Appends=(message ,possition,name)=>{
+const Appends=(message ,possition,name,stime)=>{
     if(name == ""){
         name="i am froud";
     }
@@ -47,11 +48,12 @@ txt3.setAttribute("class","message "+possition)
          txt3.append(h6e);
     }
     var ptag=document.createElement('p');
-    ptag.innerHTML=message
+    ptag.innerHTML=message;
    
     txt3.append(ptag);
      var time = document.createElement('p');
 time.setAttribute("class","time");
+      time.innerHTML=stime;
     txt3.append(time);
     messagecontainer.append(txt3);
         
@@ -72,7 +74,7 @@ socket.on('user-joined',name=>{
 
 })
 socket.on('receive',data=>{
-    Appends(data.message,'received',data.name);
+    Appends(data.message,'received',data.name,data.stime);
 
 })
 
