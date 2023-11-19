@@ -16,9 +16,9 @@ io.on('connection',socket=>{
 users[socket.id]=name;
 socket.broadcast.emit('user-joined',name);
    });
- socket.on('deletsend',id =>{
+ socket.on('deletsend',ids =>{
        if(users[socket.id]=="admin88"){
-    socket.broadcast.emit('deletreceive',{id: id, name: users[socket.id]})
+    socket.broadcast.emit('deletreceive',{ids: ids})
        }
    });
    socket.on('send',message =>{
