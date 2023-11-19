@@ -39,11 +39,14 @@ const Appends=(message ,possition,name)=>{
     
     var txt3 = document.createElement('div');
 txt3.setAttribute("class","message "+possition)
+    if(possition=="center"){
     var h6e = document.createElement('h6');
     h6e.innerHTML=name;
+         txt3.append(h6e);
+    }
     var ptag=document.createElement('p');
     ptag.innerHTML=message
-    txt3.append(h6e);
+   
     txt3.append(ptag);
     messagecontainer.append(txt3);
         
