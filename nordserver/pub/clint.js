@@ -76,8 +76,8 @@ socket.emit('new-user-joined', names,time);
 
 
 
-socket.on('user-joined',name,time=>{
-    Appends(name+' joined the chat','center',name,time);
+socket.on('user-joined',names,time=>{
+    Appends(names+' joined the chat','center',names,time);
 
 })
 socket.on('receive',data=>{
