@@ -45,7 +45,7 @@ const Appends=(message ,possition,name,stime)=>{
     
     var txt3 = document.createElement('div');
 txt3.setAttribute("class","message "+possition);
-    txt3.setAttribute("id","stime"+name);
+    txt3.setAttribute("id",stime+name);
      txt3.setAttribute("ondblclick","deletcall(this.id)");
     if(possition=="center"){
   
