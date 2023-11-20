@@ -66,13 +66,13 @@ time.setAttribute("class","time");
 Appends("You joined chat",'center',"you",time);
 
 
-socket.emit('new-user-joined', {names:names ,time:time});
+socket.emit('new-user-joined', {name:names ,time:time});
 
 
 
 
 socket.on('user-joined',ndata=>{
-    Appends(names+' joined the chat','center',ndata.names,ndata.time);
+    Appends(names+' joined the chat','center',ndata.name,ndata.time);
 
 })
 socket.on('receive',data=>{
