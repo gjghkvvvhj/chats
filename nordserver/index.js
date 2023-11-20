@@ -22,7 +22,7 @@ socket.broadcast.emit('user-joined',{names:njdata.names,time:njdata.time});
        }
    });
    socket.on('send',message =>{
-       const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric',second: 'numeric' });
+       const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric' });
     socket.broadcast.emit('receive',{message: message, name: users[socket.id],time:time})
    });
 })
