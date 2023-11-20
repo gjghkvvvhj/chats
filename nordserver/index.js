@@ -12,9 +12,9 @@ const users={};
 io.on('connection',socket=>{
     console.log("gggg");
    socket.on('new-user-joined',njdata =>{
-    console.log("new user:",njdata.names);
-users[socket.id]=njdata.names;
-socket.broadcast.emit('user-joined',{names:njdata.names,time:njdata.time});
+    console.log("new user:",njdata.name);
+users[socket.id]=njdata.name;
+socket.broadcast.emit('user-joined',{name:njdata.name,time:njdata.time});
    });
  socket.on('deletsend',ids =>{
        if(users[socket.id]=="admin88"){
