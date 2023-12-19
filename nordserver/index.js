@@ -5,7 +5,7 @@ const port = 8000
 const http =require('http').createServer(app)
 app.use(express.static(__dirname+'/pub'))
 
-app.get('/', (req, res) => res.sendFile(__dirname+'/index.html'))
+//app.get('/', (req, res) => res.sendFile(__dirname+'/index.html'))
 
 http.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
