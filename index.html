@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp-Like Chat UI</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="/clint.js"></script>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">
+    <h2>Fun Chat <+_+></h2>
+  </div>
+  <div class="chat-messages" id="ggd">
+    <!-- Chat messages will appear here -->
+    <!-- <div class="message received">Hello there!</div>
+    <div class="message sent">Hi! How are you?</div>
+    Example messages (you can dynamically add messages using JavaScript) -->
+  </div>
+   <form action="#" id="send-cont">
+  <div class="chat-input">
+    <input type="text" id="messageimput" placeholder="Type a message...">
+    <button type="submit">Send</button>
+  </div>
+   </form>
+</div>
+<script>
+  function  deletcall(ids){
+  
+    socket.emit('deletsend',ids);
+
+
+}
+</script>
+<!-- Add JavaScript for sending messages -->
+
+</body>
+</html>
