@@ -5,8 +5,10 @@ const http =require('http').createServer(app)
 app.use(express.static(__dirname+'/pub'))
 
 app.get('/', (req, res) => res.sendFile(__dirname+'/index.html'))
-app.get('/ip', (req, res) =>  const ipAddress = IP.address();
-    res.send(ipAddress))
+app.get('/data/', (req, res) => {
+    const ipAddress = IP.address();
+    res.send(ipAddress)
+})
 http.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 const io = require('socket.io')(http);
