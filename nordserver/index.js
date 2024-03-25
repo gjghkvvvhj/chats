@@ -57,7 +57,7 @@ io.on('connection',socket=>{
 
    }
    
-   sendxx('accecptmsg',"hello");
+   sendxx('accecp_tmsg',"hello");
 socket.on('coon_tel',(data) =>{
   getConnection();
   console.log(data.email)
@@ -161,7 +161,7 @@ if(getagentsecdata.length>=1){
 var qugupadehd=`UPDATE humman_msg_any SET agent = '`+getagentsecdata[0].id+`' WHERE chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status="2"`;
 connection.query(qugupadehd);
 let ggdhgd=acceptedaa.chat_id+" this chat is successfully accepted by you"
-            socket.broadcast.emit('accecptmsg',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
+            socket.broadcast.emit('accecp_tmsg',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
 let setmsg="hey I am "+getagentsecdata[0].name+". I will assist You";
             socket.broadcast.emit(acceptedaa.chat_id,{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:setmsg,type:'user',msg_type:'notify'})
 }
@@ -175,7 +175,7 @@ let setmsg="hey I am "+getagentsecdata[0].name+". I will assist You";
           if(acceptedaa.type=="tel"){
             let ggdhgd=acceptedaa.chat_id+' this chat is already accepted by someone';
             console.log("hbujjn"+ggdhgd+acceptedaa.type_val);
-            sendxx('accecptmsg',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val});
+            sendxx('accecp_tmsg',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val});
            // socket.broadcast.emit('accept_tel',"hrhjniuguyguy",function(confirmation){ console.log(confirmation)})
           }
         }
