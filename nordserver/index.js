@@ -41,6 +41,9 @@ const io = require('socket.io')(http);
 
 const users={};
 io.on('connection',socket=>{
+ io.use((socket,next)=>{
+ console.log(socket);
+ })
 
 
    socket.on('sendvss',message =>{
