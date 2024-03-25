@@ -145,7 +145,7 @@ console.log("drdf"+senddtaaquery1)
 
 
    socket.on('accepted',(acceptedaa) =>{
-          //socket.broadcast.emit('wewdherf',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
+          socket.broadcast.emit('XOICJDDUJV',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
     console.log(acceptedaa)
     var senddtaaquery1 = `SELECT * FROM humman_msg_any where chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status="2"`;
     connection.query(senddtaaquery1, function(error, datas){
