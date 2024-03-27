@@ -162,6 +162,7 @@ console.log("drdf"+senddtaaquery1)
             var getagentsec = `SELECT * FROM agent where bot_id="`+acceptedaa.bot_id+`" AND id="`+acceptedaa.agent_id+`"`;
            console.log(getagentsec)
             connection.query(getagentsec, function(error, getagentsecdata){
+               
 
 if(getagentsecdata.length>=1){
 var qugupadehd=`UPDATE humman_msg_any SET agent = '`+getagentsecdata[0].id+`' WHERE chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status="2"`;
@@ -182,7 +183,7 @@ let setmsg="hey I am "+getagentsecdata[0].name+". I will assist You";
           if(acceptedaa.type=="pannel"){
             let ggdhgd=acceptedaa.chat_id+' this chat is already accepted by someone';
             console.log("hbujjn"+ggdhgd+acceptedaa.type_val);
-           socket.broadcast.emit(String(acceptedaa.bot_id) + String(getagentsecdata[0].id),{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,type:"2"})
+           socket.broadcast.emit(String(acceptedaa.bot_id) + String(acceptedaa.agent_id),{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,type:"2"})
    
           }
         }
