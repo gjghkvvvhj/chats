@@ -119,7 +119,7 @@ console.log("drdf"+senddtaaquery1)
         if(row.tel_id==""){
     socket.broadcast.emit(senddtaa.bot_id+row.id,{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
         }else{
-            console.log(senddtaa.bot_id+row.id+"///90308934");
+            console.log(senddtaa.bot_id+row.id"+///90308934");
             socket.broadcast.emit(senddtaa.bot_id+row.id,{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
     socket.broadcast.emit('accept_tel',{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
             
