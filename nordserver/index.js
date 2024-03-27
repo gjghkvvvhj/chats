@@ -117,10 +117,10 @@ console.log("drdf"+senddtaaquery1)
         // Access data in each row
         console.log(row);
         if(row.tel_id==""){
-
+    socket.broadcast.emit(senddtaa.bot_id+row.id,{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
         }else{
             console.log("///90308934");
-            socket.broadcast.emit('pannel',{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
+            socket.broadcast.emit(senddtaa.bot_id+row.id,{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
     socket.broadcast.emit('accept_tel',{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
             
         }
@@ -148,8 +148,8 @@ console.log("drdf"+senddtaaquery1)
 
 
    socket.on('accepted',(acceptedaa) =>{
-        let ggdhgd=acceptedaa.chat_id+' this chat is already accepted by someone';
-          socket.broadcast.emit('XOICJDDUJV',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
+        //let ggdhgd=acceptedaa.chat_id+' this chat is already accepted by someone';
+         // socket.broadcast.emit('XOICJDDUJV',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
     console.log(acceptedaa)
     var senddtaaquery1 = `SELECT * FROM humman_msg_any where chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status="2"`;
     connection.query(senddtaaquery1, function(error, datas){
@@ -158,8 +158,8 @@ console.log("drdf"+senddtaaquery1)
 
         if(datas[0].agent==""){
         
-          if(acceptedaa.type=="tel"){
-            var getagentsec = `SELECT * FROM agent where bot_id="`+acceptedaa.bot_id+`" AND id="`+acceptedaa.agent_id+`" AND tel_id="`+acceptedaa.type_val+`"`;
+          if(acceptedaa.type=="pannel"){
+            var getagentsec = `SELECT * FROM agent where bot_id="`+acceptedaa.bot_id+`" AND id="`+acceptedaa.agent_id+`"`;
            console.log(getagentsec)
             connection.query(getagentsec, function(error, getagentsecdata){
 
@@ -167,7 +167,7 @@ if(getagentsecdata.length>=1){
 var qugupadehd=`UPDATE humman_msg_any SET agent = '`+getagentsecdata[0].id+`' WHERE chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status="2"`;
 connection.query(qugupadehd);
 let ggdhgd=acceptedaa.chat_id+" this chat is successfully accepted by you"
-            socket.broadcast.emit('XOICJDDUJV',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
+            socket.broadcast.emit(acceptedaa.bot_id+getagentsecdata[0].id+"e",{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val})
 let setmsg="hey I am "+getagentsecdata[0].name+". I will assist You";
             socket.broadcast.emit(acceptedaa.chat_id,{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:setmsg,type:'user',msg_type:'notify'})
 }
@@ -178,11 +178,11 @@ let setmsg="hey I am "+getagentsecdata[0].name+". I will assist You";
 
         }else{
 
-          if(acceptedaa.type=="tel"){
+          if(acceptedaa.type=="pannel"){
             let ggdhgd=acceptedaa.chat_id+' this chat is already accepted by someone';
             console.log("hbujjn"+ggdhgd+acceptedaa.type_val);
-            socket.broadcast.emit('XOICJDDUJV',{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val});
-           // socket.broadcast.emit('accept_tel',"hrhjniuguyguy",function(confirmation){ console.log(confirmation)})
+            socket.broadcast.emit(acceptedaa.bot_id+getagentsecdata[0].id+"e",{chat_id:acceptedaa.chat_id,bot_id:acceptedaa.bot_id,msg:ggdhgd,tel_id:acceptedaa.type_val});
+   
           }
         }
 
