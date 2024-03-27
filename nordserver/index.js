@@ -188,7 +188,7 @@ var inserquarry4=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agen
                
 
 if(getagentsecdata.length>=1){
-var qugupadehd=`UPDATE humman_msg_any SET agent = '`+getagentsecdata[0].id+`' WHERE chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status="2"`;
+var qugupadehd=`UPDATE humman_msg_any SET agent = '`+getagentsecdata[0].id+`' WHERE chatbot_id="`+acceptedaa.bot_id+`" AND chat_id="`+acceptedaa.chat_id+`" AND status!="1"`;
 connection.query(qugupadehd);
 let ggdhgd=acceptedaa.chat_id+" accepted"
     
