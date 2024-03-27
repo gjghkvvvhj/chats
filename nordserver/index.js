@@ -117,10 +117,10 @@ console.log("drdf"+senddtaaquery1)
         // Access data in each row
         console.log(row);
         if(row.tel_id==""){
-    socket.broadcast.emit(String(senddtaa.bot_id) + String(row.id),{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
+    socket.broadcast.emit(String(senddtaa.bot_id) + String(row.id),{msg:senddtaa.msg,type:"1",chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
         }else{
             console.log(String(senddtaa.bot_id) + String(row.id));
-            socket.broadcast.emit(String(senddtaa.bot_id) + String(row.id),{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
+          socket.broadcast.emit(String(senddtaa.bot_id) + String(row.id),{msg:senddtaa.msg,type:"1",chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
     socket.broadcast.emit('accept_tel',{msg:senddtaa.msg,tel_id:row.tel_id,chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:row.id});
             
         }
