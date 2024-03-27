@@ -136,7 +136,7 @@ console.log("drdf"+senddtaaquery1)
 	      const time = new Date()
 var senddtaaquery2 = `SELECT * FROM humman_msg_any where chatbot_id="`+senddtaa.bot_id+`" AND chat_id="`+senddtaa.chat_id+`" status="2"`;
   connection.query(senddtaaquery2, function(error, datas){
-	  console.log(datas)
+	  console.log(datas+"  $  "+datas.length)
      if(datas.length>=1){
   if( datas[0].agent==""){
  var inserquarry=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agent, time, status, browser_agent) VALUES (NULL, '`+senddtaa.bot_id+`', '`+senddtaa.msg+`', '`+senddtaa.chat_id+`', '', '`+time+`', '3', '0');`
