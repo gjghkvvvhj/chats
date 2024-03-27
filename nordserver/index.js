@@ -134,7 +134,7 @@ console.log("drdf"+senddtaaquery1)
 
      }else{
 	      const time = new Date()
-var senddtaaquery2 = `SELECT * FROM humman_msg_any where chatbot_id="`+senddtaa.bot_id+`" AND chat_id="`+senddtaa.chat_id+`" status="2"`;
+var senddtaaquery2 = `SELECT * FROM humman_msg_any where chatbot_id="`+senddtaa.bot_id+`" AND chat_id="`+senddtaa.chat_id+`" AND status="2"`;
   connection.query(senddtaaquery2, function(error, datas){
 	  console.log(datas+"  $  "+datas.length)
      if(datas.length>=1){
