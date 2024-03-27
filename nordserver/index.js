@@ -145,7 +145,7 @@ var senddtaaquery2 = `SELECT * FROM humman_msg_any where chatbot_id="`+senddtaa.
 
 
   }else{
-var inserquarry4=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agent, time, status, browser_agent) VALUES (NULL, '`+senddtaa.bot_id+`', '`+senddtaa.msg+`', '`+senddtaa.chat_id+`', '', '`+time+`', '3', '0');`
+var inserquarry4=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agent, time, status, browser_agent) VALUES (NULL, '`+senddtaa.bot_id+`', '`+senddtaa.msg+`', '`+senddtaa.chat_id+`', 'datas[0].agent', '`+time+`', '3', '0');`
     connection.query(inserquarry4)
   socket.broadcast.emit(String(senddtaa.bot_id) + String(datas[0].agent),{msg:senddtaa.msg,type:"3",chat_id:senddtaa.chat_id,bot_id:senddtaa.bot_id,agent_id:datas[0].agent});
   	  
