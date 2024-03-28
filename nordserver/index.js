@@ -51,7 +51,7 @@ var senddtaaquery2 = `SELECT * FROM humman_msg_any where chatbot_id="`+message.b
 	  console.log(datas+"  $  "+datas.length)
      if(datas.length>=1){
   if( datas[0].agent==message.agent_id){
-	  var inserquarry=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agent,msg_type, time, status, browser_agent) VALUES (NULL, '`+message.bot_id+`', '`+message.msg+`', '`+message.chat_id+`', '`+message.agent_id+`','1', '`+time+`', '2', '0');`
+	  var inserquarry=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agent,msg_type, time, status, browser_agent) VALUES (NULL, '`+message.bot_id+`', '`+message.msg+`', '`+message.chat_id+`', '`+message.agent_id+`','1', '`+time+`', '3', '0');`
     connection.query(inserquarry)  
   socket.broadcast.emit(message.chat_id,{chat_id:message.chat_id,bot_id:message.bot_id,msg:message.msg,type:'user',msg_type:'msg'})
 }
