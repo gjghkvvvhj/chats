@@ -43,6 +43,7 @@ const users={};
 io.on('connection',socket=>{
 
  socket.on('notifynews',message =>{
+	 console.log(message);
 socket.broadcast.emit("all",{newsid:message.newsid,msgtitle:message.title,msgimg:message.img})
 
  });
