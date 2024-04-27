@@ -42,7 +42,10 @@ const io = require('socket.io')(http);
 const users={};
 io.on('connection',socket=>{
 
+ socket.on('notifynews',message =>{
+socket.broadcast.emit("all",{newsid:message.newsid,msgtitle:message.title,msgimg:message.img})
 
+ });
 
    socket.on('sendvss',message =>{
    const time = new Date()
