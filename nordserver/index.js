@@ -16,7 +16,7 @@ var connection = mysql.createPool({
     user: process.env.DB_NAME,
     password: process.env.DB_PASS,
     database:process.env.DB_USER_NAME,
-    port:process.env.PORT,
+    port:'3306' ,
 
    
   });
