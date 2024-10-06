@@ -118,7 +118,7 @@ socket.on('coon_tel',(data) =>{
    socket.on('send',(senddtaa) =>{
     var senddtaaquery1 = `SELECT * FROM humman_msg_any where chatbot_id="`+senddtaa.bot_id+`" AND chat_id="`+senddtaa.chat_id+`"`;
     connection.query(senddtaaquery1, function(error, datas){
-console.log("drdf"+senddtaaquery1)
+console.log("drdf"+datas)
       if(datas.length>=1){
      if(datas.length==1){
     if( datas[0].status=="1"){
@@ -178,7 +178,7 @@ var inserquarry4=`INSERT INTO humman_msg_any (id, chatbot_id, msg, chat_id, agen
      }
 
       }else{
-
+console.log("phph");
       }
 
     });
