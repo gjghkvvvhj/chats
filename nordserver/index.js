@@ -12,10 +12,10 @@ http.listen(port, () => console.log(`Example app listening on port ${port}!`))
 var mysql = require('mysql');
 
 var connection = mysql.createPool({
-    host: process.env.HOST,
-    user: process.env.DB_NAME,
-    password: process.env.DB_PASS,
-    database:process.env.DB_USER_NAME,
+    host: "89.117.27.1",
+    user: "u626595585_chatsubbot",
+    password: "3]vcC@gR",
+    database:"u626595585_chatsubbot",
     port:'3306' ,
 
    
